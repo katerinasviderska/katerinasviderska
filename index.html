@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katerina Sviderska</title>
+<meta name="description" content="Katerina Sviderska, political scientist working on EU integration and enlargement, nationalism, political violence and security in Ukraine and Eastern Europe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fixed left column (name, nav, links) beside a single reading column; stacks to a top bar on phones. */
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --ink: #18202b;
+  --muted: #5a6574;
+  --rule: #d9dee5;
+  --accent: #23477a;      /* deep archival blue */
+  --accent-soft: #e6ecf5;
+  --todo-bg: #fff6d6;
+  --todo-ink: #6b5200;
+  --display: "Spectral", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161d; --surface: #171e27; --ink: #e6eaf0; --muted: #9aa6b5; --rule: #2a3442;
+    --accent: #8fb0e3; --accent-soft: #1d2a3d; --todo-bg: #3a3112; --todo-ink: #f3dc8e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161d; --surface: #171e27; --ink: #e6eaf0; --muted: #9aa6b5; --rule: #2a3442;
+  --accent: #8fb0e3; --accent-soft: #1d2a3d; --todo-bg: #3a3112; --todo-ink: #f3dc8e; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100vh; }
+aside {
+  position: sticky; top: 0; height: 100vh; align-self: start;
+  border-right: 1px solid var(--rule); background: var(--surface);
+  padding-block: 40px 28px; padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: 24px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+.name { font-family: var(--display); font-size: 1.6rem; font-weight: 600; line-height: 1.15; color: var(--ink); text-decoration: none; }
+.name-uk { display: block; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 1rem; color: var(--muted); margin-top: 6px; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+nav a {
+  display: block; padding: 6px 10px; margin-left: -10px; border-radius: 4px;
+  color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem;
+}
+nav a:hover { background: var(--accent-soft); }
+nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+.side-links { margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; }
+.side-links span { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+main {
+  padding-block: 56px 80px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 720px; margin: 0 auto; }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.1; margin: 0 0 24px; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 1.5rem; margin: 48px 0 16px; text-wrap: balance; }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p { margin: 0 0 16px; max-width: 65ch; }
+.lede { font-family: var(--display); font-size: 1.3rem; line-height: 1.5; }
+
+/* Home */
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 40px; align-items: start; }
+.portrait {
+  display: block; width: 100%; aspect-ratio: 4 / 5; max-width: 100%; height: auto; object-fit: cover; object-position: 50% 30%;
+  border-radius: 4px; background: var(--accent-soft); border: 1px solid var(--rule);
+}
+.facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding-block: 18px; margin: 32px 0; }
+.facts dt { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 4px 0 0; font-size: 0.92rem; }
+
+/* Entry lists (CV, publications, media) */
+.entries { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.entries li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 20px; padding-block: 14px; border-top: 1px solid var(--rule); }
+.entries li:last-child { border-bottom: 1px solid var(--rule); }
+.when { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.entries p { margin: 4px 0 0; color: var(--muted); font-size: 0.93rem; }
+.cv-button { display: inline-block; padding: 10px 18px; border: 1px solid var(--accent); border-radius: 4px; text-decoration: none; font-weight: 500; }
+.cv-button:hover { background: var(--accent-soft); }
+.entries h3 a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 1px; }
+.entries h3 a:hover { color: var(--accent); }
+.reports { margin: 4px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 0.93rem; max-width: 65ch; }
+.page.wide { max-width: 1080px; }
+.tl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; margin-top: 40px; }
+.tl-col h2 { margin: 0 0 24px; font-size: 1.3rem; }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 2px solid var(--rule); display: flex; flex-direction: column; gap: 32px; }
+.timeline li { position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -32px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.tl-when { display: block; font-family: var(--mono); font-size: 0.8rem; color: var(--accent); font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+.timeline h3 { font-family: var(--display); font-size: 1.12rem; font-weight: 600; line-height: 1.3; text-wrap: balance; }
+.timeline p { margin: 6px 0 0; color: var(--muted); font-size: 0.93rem; }
+@media (max-width: 1100px) { .tl-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+.photo { margin: 32px 0; }
+.photo img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 4px; }
+.photo figcaption { margin-top: 8px; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--muted); }
+.theme .photo { margin: 16px 0 0; }
+.status { display: inline-block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 2px; }
+
+/* Research themes */
+.themes { display: flex; flex-direction: column; gap: 28px; }
+.theme { padding-left: 18px; border-left: 2px solid var(--accent); }
+.theme h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 500; margin-bottom: 8px; }
+
+/* Draft placeholders: visible in the preview, removed before publishing */
+.todo { background: var(--todo-bg); color: var(--todo-ink); font-family: var(--mono); font-size: 0.8em; padding: 1px 6px; border-radius: 3px; }
+.draft-note { background: var(--todo-bg); color: var(--todo-ink); border-radius: 4px; padding: 12px 16px; font-size: 0.88rem; margin-bottom: 32px; }
+
+footer { max-width: 720px; margin: 64px auto 0; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.82rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  aside {
+    position: sticky; top: env(safe-area-inset-top, 0px); height: auto; z-index: 5;
+    border-right: 0; border-bottom: 1px solid var(--rule);
+    padding-block: 14px 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    gap: 10px;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+  .name { font-size: 1.25rem; }
+  .name-uk, .side-links { display: none; }
+  nav ul { flex-direction: row; flex-wrap: wrap; gap: 2px 4px; }
+  nav a { margin-left: 0; padding: 4px 8px; font-size: 0.88rem; }
+  main { padding-block: 32px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .intro { grid-template-columns: minmax(0, 1fr); }
+  .portrait { max-width: 160px; order: -1; }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .entries li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .page:not([hidden]) { animation: rise 0.25s ease-out; }
+  @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div>
+      <a class="name" href="#home">Katerina Sviderska</a>    </div>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home">About</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#projects">Beyond academia</a></li>
+      </ul>
+    </nav>
+    <div class="side-links">
+      <span>Elsewhere</span>
+      <a href="https://www.linkedin.com/in/katerina-sviderska-618950b8/">LinkedIn</a>
+      <a href="https://www.polis.cam.ac.uk/staff/katerina-sviderska">POLIS, Cambridge</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ABOUT -->
+    <section class="page" id="page-home">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">Political science · Ukraine &amp; Europe</p>
+          <h1>Katerina Sviderska</h1>
+          <p class="lede">Political scientist working on EU integration and enlargement, nationalism, political violence and security in Ukraine and Eastern Europe.</p>
+        </div>
+        <img class="portrait" src="portrait.jpg" alt="Portrait of Katerina Sviderska" width="560" height="700">
+      </div>
+
+      <dl class="facts">
+        <div><dt>Currently</dt><dd>PhD candidate, King's College, Cambridge</dd></div>
+      </dl>
+
+      <h2>Biography</h2>
+      <p>I am a Gates Cambridge Scholar and PhD candidate in Politics and International Studies at King's College, University of Cambridge. My dissertation, <em>Europeanisation before Europe: Ukraine's Path from Aspiration to Recognition</em>, traces how Ukraine pursued European integration long before the EU recognised it as a candidate. My doctorate is also funded by the Fonds de recherche du Québec.</p>
+      <p>My wider research covers nationalism and identity politics, including in de facto states, political violence and memory politics, and security and defence. I hold an M.Sc. in Political Science from the Université de Montréal, where my thesis on Russian historiography and genocide in Ukraine received the 2025 Jenson-Pétry Prize for the best master's thesis in Québec.</p>
+      <p>I teach as a Visiting Lecturer at the Kyiv School of Economics, and in 2025–2026 I was a supervisor in Comparative Politics at Cambridge. I am an Associate Fellow of the Chair of Ukrainian Studies at the University of Ottawa, a researcher at the Royal Military College Saint-Jean, and Assistant Director of the Association for the Study of Nationalities convention.</p>
+      <p>Outside academia, I work as a fixer in Ukraine for <em>Le Devoir</em> and <em>Libération</em>, and I write regularly for <em>La Presse</em>, <em>The Hill Times</em> and other outlets. I work in English, French, Ukrainian, Russian and Italian.</p>
+
+      <figure class="photo"><img src="img/kyiv-rooftops.jpg" alt="Rooftops and a gilded dome in central Kyiv at dusk" loading="lazy"><figcaption>Kyiv</figcaption></figure>
+      <h2>Contact</h2>
+      <p><a href="mailto:ks2148@cam.ac.uk">ks2148@cam.ac.uk</a></p>
+    </section>
+
+    <!-- CV -->
+    <section class="page wide" id="page-cv" hidden>
+      <p class="eyebrow">Curriculum vitae</p>
+      <h1>CV</h1>
+      <div class="tl-grid">
+      <div class="tl-col">
+        <h2>Education</h2>
+        <ul class="timeline">
+          <li><span class="tl-when">2024 – Present</span><h3>PhD, Politics and International Studies, University of Cambridge</h3><p>King’s College. Dissertation: <em>Europeanisation before Europe: Ukraine’s Path from Aspiration to Recognition</em>. Gates Cambridge Scholarship.</p></li>
+          <li><span class="tl-when">2022 – 2024</span><h3>MSc, Political Science, Université de Montréal</h3><p>With distinction. Jenson-Pétry Prize for the best master’s thesis in Québec.</p></li>
+          <li><span class="tl-when">2019 – 2022</span><h3>BSc, International Studies, Université de Montréal</h3><p>With distinction. Semester abroad at Sciences Po Paris.</p></li>
+        </ul>
+      </div>
+      <div class="tl-col">
+        <h2>Academic appointments</h2>
+        <ul class="timeline">
+          <li><span class="tl-when">2026 – Present</span><h3>Visiting Lecturer, Kyiv School of Economics</h3><p>Nations and Nationalisms in Europe, MA in Public Policy and Governance.</p></li>
+          <li><span class="tl-when">2025 – 2026</span><h3>Supervisor (Associate Lecturer), University of Cambridge</h3><p>Comparative Politics, POLIS.</p></li>
+          <li><span class="tl-when">2024 – 2025</span><h3>Visiting Graduate Research Trainee, McGill University</h3><p>Jean Monnet Centre for European Studies.</p></li>
+          <li><span class="tl-when">2022 – Present</span><h3>Associate Fellow, University of Ottawa</h3><p>Chair of Ukrainian Studies.</p></li>
+          <li><span class="tl-when">2021 – 2024</span><h3>Teaching Assistant, Université de Montréal</h3><p>Eight courses on international studies, Eurasian politics, armed conflict and nationalism.</p></li>
+        </ul>
+      </div>
+      <div class="tl-col">
+        <h2>Research experience</h2>
+        <ul class="timeline">
+          <li><span class="tl-when">2026 – Present</span><h3>Research Assistant, McGill University</h3><p>Elections in Eastern Europe.</p></li>
+          <li><span class="tl-when">2025 – Present</span><h3>Researcher, Royal Military College Saint-Jean</h3></li>
+          <li><span class="tl-when">2022 – 2025</span><h3>Research Assistant, Université de Montréal</h3><p>De facto states.</p></li>
+          <li><span class="tl-when">2023</span><h3>Student Fellow, Concordia University</h3><p>Montreal Institute for Genocide and Human Rights Studies.</p></li>
+          <li><span class="tl-when">2021 – 2022</span><h3>Research Assistant, CÉRIUM</h3><p>Contestation in Russia.</p></li>
+          <li><span class="tl-when">2020 – 2022</span><h3>Research Assistant, Université de Montréal</h3><p>Foreign military training.</p></li>
+        </ul>
+      </div>
+      <div class="tl-col">
+        <h2>Scholarships and honours</h2>
+        <ul class="timeline">
+          <li><span class="tl-when">2025 – 2029</span><h3>Doctoral Research Scholarship</h3><p>Fonds de recherche du Québec.</p></li>
+          <li><span class="tl-when">2025</span><h3>Jenson-Pétry Prize</h3><p>Best master’s thesis in Québec, Société québécoise de science politique.</p></li>
+          <li><span class="tl-when">2025</span><h3>Doctoral Award</h3><p>Canadian Centennial Scholarship Fund.</p></li>
+          <li><span class="tl-when">2024 – 2028</span><h3>Gates Cambridge Scholarship</h3><p>University of Cambridge.</p></li>
+          <li><span class="tl-when">2024</span><h3>Québec finalist, Rhodes Scholarship</h3><p>University of Oxford.</p></li>
+          <li><span class="tl-when">2024</span><h3>Berthelet-Aubin Foundation Scholarship</h3><p>Université de Montréal.</p></li>
+          <li><span class="tl-when">2024</span><h3>Édouard-Montpetit-Manuvie Excellence Scholarship</h3><p>Université de Montréal.</p></li>
+          <li><span class="tl-when">2023 – 2024</span><h3>Master’s Research Scholarship</h3><p>Fonds de recherche du Québec.</p></li>
+          <li><span class="tl-when">2021</span><h3>Young MINDS Targeted Engagement Grant</h3><p>Department of National Defence of Canada.</p></li>
+        </ul>
+      </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="page" id="page-research" hidden>
+      <p class="eyebrow">Research</p>
+      <h1>What I work on</h1>
+      <figure class="photo"><img src="img/kings.jpg" alt="King's College Chapel, Cambridge" loading="lazy"><figcaption>King’s College, Cambridge</figcaption></figure>
+      <div class="themes">
+        <div class="theme">
+          <h3>European integration and enlargement</h3>
+          <p>My doctoral dissertation, <em>Europeanisation before Europe: Ukraine's Path from Aspiration to Recognition</em>, studies how the European Union became a political question in Ukraine, and how Ukraine's sense of belonging to Europe changed over time. I examine when and how the EU was politicised in Ukrainian politics.</p>
+          <p>The project uses mixed methods. I combine LLM-assisted text analysis of speeches in the Verkhovna Rada with qualitative research based on interviews.</p>
+        </div>
+        <div class="theme">
+          <h3>Nationalism</h3>
+          <p>I work on nation-building and identity politics, with a particular interest in de facto states. I study how these entities build and narrate their identity, and how they manage relations with their partners, including in the context of EU enlargement towards Moldova and Georgia. I have written on memory politics in Abkhazia, through local memories of nineteenth-century deportations and their effect on attitudes towards Russia.</p>
+        </div>
+        <div class="theme">
+          <h3>Political violence and memory politics</h3>
+          <p>I study extreme violence and ethnic conflict, and how states narrate the past to make such violence possible. My master's thesis linked Russian historiography to genocidal violence in Ukraine and won the 2025 Jenson-Pétry Prize for the best master's thesis in Québec.</p>
+        </div>
+        <div class="theme">
+          <h3>Security and defence</h3>
+          <p>Two projects make up this strand. I examine the "human safari" in Kherson, where Russian drones hunt civilians, and conceptualise it as a form of violence grounded in dehumanisation.</p>
+          <p>At the Royal Military College Saint-Jean, I study the institutional preparedness of Ukraine's reserve forces and the civic resistance that grew around them.</p>
+        </div>
+      </div>
+      <figure class="photo"><img src="img/asn-panel.jpg" alt="Katerina Sviderska with fellow panellists after a panel" loading="lazy"><figcaption>Presenting “When and How Was Europe on the Table?”, ASN World Convention, New York, 2026</figcaption></figure>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="page" id="page-publications" hidden>
+      <p class="eyebrow">Publications</p>
+      <h1>Papers and reviews</h1>
+
+      <h2>Peer-reviewed</h2>
+      <ul class="entries">
+        <li><span class="when">2026</span><div><h3>Dembińska, Magdalena, and Katerina Sviderska. "Russia, Friend or Foe? Uneasy Memories of Nineteenth-Century Deportations in Abkhazia."</h3><p><em>Europe-Asia Studies</em>, 1–21. <a href="https://doi.org/10.1080/09668136.2026.2668614">doi.org/10.1080/09668136.2026.2668614</a></p></div></li>
+        <li><span class="when">2024</span><div><h3>Sviderska, Katerina. Review of <em>Varieties of Nationalism: Communities, Narratives, Identities</em>, by Harris Mylonas and Maya Tudor.</h3><p><em>Politique et Sociétés</em> 43, no. 2. <a href="https://doi.org/10.7202/1114888ar">doi.org/10.7202/1114888ar</a></p></div></li>
+      </ul>
+
+      <h2>Reports</h2>
+      <ul class="entries">
+        <li><span class="when">2026</span><div><h3>Comité intersectoriel étudiant. <span lang="fr">Rapport sur l'intégration de la relève internationale en recherche</span>.</h3><p>Fonds de recherche du Québec. Report lead. <a href="https://frq.gouv.qc.ca/app/uploads/2026/07/rapport-releve-internationale.pdf">Read the report (PDF, in French)</a></p></div></li>
+      </ul>
+
+      <h2>Working papers</h2>
+      <ul class="entries">
+        <li><span class="when">R&amp;R</span><div><h3>Dembińska, Magdalena, and Katerina Sviderska. "Moldova, Georgia and the EU Enlargement, With or Without De Facto States? Strategic Hedging in Liminal Transnistria and Abkhazia."</h3><p>Revise and resubmit, <em>International Politics</em>.</p></div></li>
+        <li><span class="when">Draft</span><div><h3>Sviderska, Katerina. "Ukraine's Reserve Forces Under Fire: Institutional Preparedness and Civic Resistance."</h3></div></li>
+        <li><span class="when">Draft</span><div><h3>Hook, Kristina, and Katerina Sviderska. "Conceptualizing 'Human Safari' Tactics as a Form of Dehumanization-Based Violence."</h3></div></li>
+      </ul>
+    </section>
+
+    <!-- MEDIA -->
+    <section class="page" id="page-media" hidden>
+      <p class="eyebrow">Media</p>
+      <h1>Commentary and press</h1>
+      <figure class="photo"><img src="img/acfas.jpg" alt="Katerina Sviderska speaking on a panel" loading="lazy"><figcaption>Congrès de l’Acfas, Montréal, 2025</figcaption></figure>
+
+      <h2>Written</h2>
+      <ul class="entries">
+        <li><span class="when">2026</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/dialogue/opinions/2026-02-24/guerre-en-ukraine/quatre-annees-qui-ont-conduit-a-l-impasse.php">« Quatre années qui ont conduit à l'impasse »</a> (with Dominique Arel)</h3><p><em>La Presse</em>, 24 February.</p></div></li>
+        <li><span class="when">2025</span><div><h3><a href="https://theconversation.com/what-liberal-mark-carneys-canadian-election-win-means-for-europe-254775">“What Liberal Mark Carney’s Election Win in Canada Means for Europe”</a> (with Léandre Benoit)</h3><p><em>The Conversation</em>.</p></div></li>
+        <li><span class="when">2025</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/dialogue/opinions/2025-02-24/negociations-pour-la-paix-en-ukraine/prevenir-un-munich-2025.php">« Prévenir un Munich 2025 »</a> (with Dominique Arel)</h3><p><em>La Presse</em>, 24 February.</p></div></li>
+        <li><span class="when">2024</span><div><h3><a href="https://www.hilltimes.com/story/2024/11/06/for-ukraine-the-need-for-solidarity-between-ottawa-and-brussels/440782/">“For Ukraine, We Need Solidarity between Ottawa and Brussels”</a></h3><p><em>The Hill Times</em>, 6 November.</p></div></li>
+        <li><span class="when">2024</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/dialogue/opinions/2024-02-21/deux-ans-de-guerre-en-ukraine/la-liberte-ou-la-mort.php">« Deux ans de guerre en Ukraine : la liberté ou la mort »</a></h3><p><em>La Presse</em>, 21 February.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.ledevoir.com/opinion/idees/794365/idees-le-canada-doit-soutenir-l-integration-de-l-ukraine-dans-l-otan">« Le Canada doit soutenir l’intégration de l’Ukraine dans l’OTAN »</a></h3><p><em>Le Devoir</em>, 11 July.</p></div></li>
+        <li><span class="when">2023</span><div><h3><a href="https://www.hilltimes.com/story/2023/07/10/canada-must-support-ukraines-nato-integration/392326/">“Canada Must Support Ukraine’s NATO Integration”</a></h3><p><em>The Hill Times</em>, 10 July.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/debats/opinions/2023-06-09/destruction-du-barrage-de-kakhovka/qui-ne-dit-mot-consent.php">« Destruction du barrage de Kakhovka : qui ne dit mot consent »</a></h3><p><em>La Presse</em>, 9 June.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/debats/opinions/2023-05-01/ukraine-entre-genocide-et-natiocide.php">« Ukraine : entre génocide et natiocide »</a></h3><p><em>La Presse</em>, 1 May.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/debats/opinions/2023-03-22/les-enfants-ukrainiens-trophees-de-guerre-russes.php">« Les enfants ukrainiens, trophées de guerre russes »</a></h3><p><em>La Presse</em>, 22 March.</p></div></li>
+        <li><span class="when">2023</span><div><h3><a href="https://www.thestar.com/opinion/contributors/the-womanly-face-of-war-in-ukraine/article_51540f8a-acf8-569f-83cb-0f2267661c24.html">“The Womanly Face of the War in Ukraine”</a></h3><p><em>Toronto Star</em>, 10 March.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/debats/opinions/2023-03-10/manifestations-en-georgie/il-a-toujours-ete-question-de-l-europe.php">« Manifestations en Géorgie : il a toujours été question de l’Europe »</a></h3><p><em>La Presse</em>, 10 March.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr"><a href="https://www.lapresse.ca/debats/opinions/2023-02-22/la-guerre-a-un-visage-de-femme.php">« La guerre a un visage de femme »</a></h3><p><em>La Presse</em>, 22 February.</p></div></li>
+      </ul>
+
+      <h2>Television</h2>
+      <ul class="entries">
+        <li><span class="when">2023</span><div><h3 lang="fr">« La visite du président Zelensky au Canada »</h3><p>Radio-Canada Information, <em>24/60</em> with Anne-Marie Dussault and <em>Téléjournal</em> with Patrice Roy, 22 September.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr">« 365 jours de la guerre en Ukraine »</h3><p>Radio-Canada Information, <em>24/60</em> with Anne-Marie Dussault, 23 February.</p></div></li>
+      </ul>
+
+      <h2>Radio</h2>
+      <ul class="entries">
+        <li><span class="when">2025</span><div><h3 lang="fr">« La détermination des Ukrainiens ne faiblit pas »</h3><p>107,7 FM, <em>L’Estrie aujourd’hui</em> with Steve Roy, 5 March.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr">« La visite du président Zelensky au Canada »</h3><p>98,5 FM, <em>Le Québec maintenant</em> with Patrick Lagacé, 22 September.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr">« Kidnapping d’enfants ukrainiens »</h3><p>98,5 FM, <em>Le Québec maintenant</em> with Patrick Lagacé, 23 March.</p></div></li>
+        <li><span class="when">2023</span><div><h3 lang="fr">« Violence sexuelle et viols des femmes en Ukraine »</h3><p>98,5 FM, <em>Le Québec maintenant</em> with Patrick Lagacé, 23 February.</p></div></li>
+      </ul>
+
+      <h2>Podcasts</h2>
+      <ul class="entries">
+        <li><span class="when">2026</span><div><h3 lang="fr">« Quatre ans de guerre en Ukraine. Mythes de masse à violence de masse »</h3><p><em>Conversations on Genocide</em>, February.</p></div></li>
+        <li><span class="when">2023</span><div><h3>“Katerina Sviderska: Living and Studying the War”</h3><p><em>Curriculum</em>.</p></div></li>
+        <li><span class="when">2023</span><div><h3>“One Year: How Ukrainian Civil Society Continues to Resist”</h3><p><em>Human Rights Talks</em>.</p></div></li>
+      </ul>
+
+      <h2>Press interviews</h2>
+      <ul class="entries">
+        <li><span class="when">2022</span><div><h3 lang="fr">« Libération de Kherson : on avait raison d’avoir espoir »</h3><p><em>Journal Métro</em>, 11 November.</p></div></li>
+        <li><span class="when">2022</span><div><h3 lang="fr">« Les étudiants ukrainiens de Sciences Po racontent leur guerre à distance »</h3><p><em>Émile</em>, Sciences Po, 31 March.</p></div></li>
+        <li><span class="when">2022</span><div><h3 lang="fr">« Sanctions réclamées contre un professeur pro-russe »</h3><p><em>La Presse</em>, 27 March.</p></div></li>
+      </ul>
+
+      <figure class="photo"><img src="img/question.jpg" alt="Katerina Sviderska speaking from the audience at a public event" loading="lazy"></figure>
+      <h2>Public talks</h2>
+      <ul class="entries">
+        <li><span class="when">2025</span><div><h3>"Memorialization Policies and Challenges in Ukraine"</h3><p>Roundtable, ASN World Convention, New York.</p></div></li>
+        <li><span class="when">2025</span><div><h3 lang="fr">« Comment entretenir la flamme aux cycles supérieurs ? »</h3><p>Congrès de l'Acfas, Montréal.</p></div></li>
+        <li><span class="when">2023</span><div><h3>Talks on the Russian invasion, memory and genocide</h3><p>Centre d'études sur la paix et la sécurité internationale (CEPSI), January and November; École nationale d'administration publique, June.</p></div></li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="page" id="page-projects" hidden>
+      <p class="eyebrow">Projects</p>
+      <h1>Beyond academia</h1>
+      <figure class="photo"><img src="img/sophia.jpg" alt="St Sophia's Cathedral bell tower in Kyiv, with lilacs in bloom" loading="lazy"><figcaption>St Sophia’s Cathedral, Kyiv</figcaption></figure>
+
+      <div class="themes">
+        <div class="theme">
+          <h3>Fixing in Ukraine</h3>
+          <p>Since 2024 I have worked as a local fixer for <em>Le Devoir</em> and <em>Libération</em>: checking sources, finding witnesses, liaising with authorities and organising reporting on the ground.</p>
+          <ul class="reports">
+            <li lang="fr"><a href="https://www.ledevoir.com/monde/europe/823819/civils-kherson-enfer-drones-tueurs-russes">En Ukraine, les civils de Kherson vivent dans l’enfer des drones tueurs russes</a> · <em>Le Devoir</em>, November 2024</li>
+            <li lang="fr"><a href="https://www.ledevoir.com/monde/europe/823828/kherson-resigne-vivre-malgre-feu-nourri-russe">Kherson se résigne à vivre malgré le feu nourri russe</a> · <em>Le Devoir</em>, November 2024</li>
+            <li lang="fr"><a href="https://www.ledevoir.com/monde/europe/823825/orphelins-malioutka-recit-rapt-enfants-ukrainiens-grande-echelle">Les orphelins de Malioutka, récit d’un rapt d’enfants ukrainiens à grande échelle</a> · <em>Le Devoir</em>, November 2024</li>
+            <li lang="fr"><a href="https://www.ledevoir.com/monde/849502/ukrainiens-sentent-trahis-etats-unis-donald-trump">Les Ukrainiens se sentent trahis par les États-Unis de Donald Trump</a> · <em>Le Devoir</em>, February 2025</li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h3>The Skrynia Initiative</h3>
+          <p>From 2023 to 2026 I coordinated the Skrynia Initiative at <a href="https://shadowsproject.org">The Shadows Project</a>. We raised funds and delivered humanitarian aid to museums across Ukraine, in Kharkiv, Sumy, Kyiv, Kherson, Odesa and Lviv, supplying protective materials so that their collections could be kept safe from shelling.</p>
+        </div>
+        <div class="theme">
+          <h3>International researchers in Québec</h3>
+          <p>As a member of the Intersectoral Student Committee of the Fonds de recherche du Québec, I led the committee's 2026 report on how international graduate students and postdoctoral researchers integrate into Québec's research system. Since 2024, provincial and federal rules on their arrival and stay have changed quickly, and international enrolment in Québec universities fell sharply in autumn 2025.</p>
+          <p>The report draws on a review of academic and grey literature, interviews with people across the university sector, and five focus groups with about 75 participants at the 2025 Journées de la relève en recherche. It identifies five groups of obstacles: policy and regulation, administration and immigration, finances, supervision, and social integration. From these it sets out 13 recommendations to the FRQ and universities, among them adapting scholarship applications, reducing financial barriers, recognising intercultural supervision, supporting scientific French and strengthening mental health resources.</p>
+          <p><a href="https://frq.gouv.qc.ca/app/uploads/2026/07/rapport-releve-internationale.pdf">Read the report (PDF, in French)</a></p>
+        </div>
+        <div class="theme">
+          <h3>Academic service</h3>
+          <p>I have been part of the organising team of the <a href="https://nationalities.org/">Association for the Study of Nationalities (ASN) World Convention</a>, held at the Harriman Institute, Columbia University, since 2023, and its Assistant Director since 2024.</p>
+          <p>Since 2025 I have co-coordinated the Danyliw Seminar on Contemporary Ukraine, hosted by the Chair of Ukrainian Studies at the University of Ottawa.</p>
+          <figure class="photo"><img src="img/danyliw.jpg" alt="Katerina Sviderska with colleagues at the Danyliw Seminar" loading="lazy"><figcaption>Danyliw Seminar, University of Ottawa</figcaption></figure>
+        </div>
+        <div class="theme">
+          <h3>Mentoring</h3>
+          <p>Since 2019 I have mentored students on admissions to the Université de Montréal and Cambridge, grant applications, careers, and research and writing.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Katerina Sviderska</footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var pages = ["home", "cv", "research", "publications", "media", "projects"];
+  function show() {
+    var id = (location.hash || "#home").slice(1);
+    if (pages.indexOf(id) === -1) id = "home";
+    pages.forEach(function (p) {
+      document.getElementById("page-" + p).hidden = p !== id;
+    });
+    document.querySelectorAll("nav a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", show);
+  show();
+})();
+</script>
+
+</body>
+</html>
